@@ -1,5 +1,13 @@
 inspire-me api
 
+sites:
+    - map: api.inspire-me.dev
+      to: /home/vagrant/projects/inspire-me-api/public
+    - map: inspire-me.dev
+      to: /home/vagrant/projects/inspire-me/app
+
+remember to set hosts etc
+
 
 ## Laravel PHP Framework
 
