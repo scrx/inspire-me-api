@@ -15,3 +15,17 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
+
+
+//jedwabistosc laravela w czystej postaci http://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
+//Route Closures are great for developing small applications and quick prototypes.
+//uzywany filtra allowOrigin ze wzgledu na CORS
+Route::group(array('after' => 'allowOrigin'), function() {
+
+
+    Route::resource('products', 'ProductController');
+
+    
+});
