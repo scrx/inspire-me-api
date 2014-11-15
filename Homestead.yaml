@@ -1,0 +1,23 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: c:/dev/projects
+      to: /home/vagrant/projects
+
+sites:
+    - map: api.inspire-me.dev
+      to: /home/vagrant/projects/inspire-me-api/public
+    - map: inspire-me.dev
+      to: /home/vagrant/projects/inspire-me/app
+
+variables:
+    - key: APP_ENV
+      value: local
