@@ -18,15 +18,15 @@ class CreateProdutsTable extends Migration {
             $table->string('name');
             $table->string('brand');
             $table->string('description');
-            $table->float('capacity');
-            $table->float('kcal');
-            $table->float('protein');
-            $table->float('fat');
-            $table->float('saturated_fat');
-            $table->float('carb');
-            $table->float('sugar');            
-            $table->float('fibre');
-            $table->float('price');
+            $table->decimal('capacity',5,2);
+            $table->decimal('kcal',5,2);
+            $table->decimal('protein',2,2);
+            $table->decimal('fat',2,2);
+            $table->decimal('saturated_fat',2,2);
+            $table->decimal('carb',2,2);
+            $table->decimal('sugar',2,2);            
+            $table->decimal('fibre',2,2);
+            $table->decimal('price',5,2);
             $table->timestamps();
 		});
 	}

@@ -42,7 +42,7 @@ class ProductController extends \BaseController {
         //$product = $content_array['product'];
          //   $result = json_decode($content);
         
-       $product = Product::create(array(
+        $result = Product::create(array(
              'name' => $product->name,
              'brand' => $product->brand,
              'description' => $product->description,
@@ -57,7 +57,7 @@ class ProductController extends \BaseController {
              'price' => $product->price                      
         ));
 
-        return Response::json(array('status' => 200, 'mesg' => 'saved successfully!'));
+        return Response::json(array('status' => 200, 'mesg' => 'Product saved'));
     }
 
 
