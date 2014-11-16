@@ -30,12 +30,34 @@ class ProductController extends \BaseController {
      */
     public function store()
     {
-        Product::create(array(
-            'name' => Input::get('name'),
-            'brand' => Input::get('brand')
+
+                // First we fetch the Request instance
+        $request = Request::instance();
+
+        // Now we can get the content from it
+        $content = $request->getContent();
+
+        $product = json_decode($content);
+
+        //$product = $content_array['product'];
+         //   $result = json_decode($content);
+        
+       $product = Product::create(array(
+             'name' => $product->name,
+             'brand' => $product->brand,
+             'description' => $product->description,
+             'capacity' => $product->capacity,
+             'kcal' => $product->kcal,
+             'protein' => $product->protein,
+             'fat' => $product->fat,
+             'saturated_fat' => $product->saturated_fat,             
+             'carb' => $product->carb,
+             'sugar' => $product->sugar,
+             'fibre' => $product->fibre,
+             'price' => $product->price                      
         ));
 
-        return Response::json(array('success' => true));
+        return Response::json(array('status' => 200, 'mesg' => 'saved successfully!'));
     }
 
 

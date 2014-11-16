@@ -25,6 +25,7 @@ Route::get('/', function()
 Route::group(array('after' => 'allowOrigin'), function() {
 
 
+	//Route::post('products', 'ProductController@add');
     Route::resource('products', 'ProductController');
 
     
